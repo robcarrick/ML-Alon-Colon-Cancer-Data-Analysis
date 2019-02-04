@@ -4,6 +4,7 @@ load('alon.rDa')
 data <- cbind.data.frame(x,y)
 
 ### Feature correlation and p-value visualisations ####
+
 # Corrleation histogram: histogram of feature correlations
 res <- cor(x)
 res[upper.tri(res, diag=TRUE)] <- 0
@@ -34,7 +35,7 @@ top_4 <- p_vals_ordered$ix[1:4] # take the four covariates with the smallest p-v
 pairs(x[,top_4],main = 'Alon Dataset: Top Four Covariates', 
       lower.panel=NULL, 
       pch = c(22,24)[unclass(y)], 
-      bg = c("red", "green")[unclass(y)])
+      bg = c("red", "green")[unclass(y)]) # This highlights the two classes on the plots (see if there is some linear separability)
 
 # Histogram of the p values
 hist(p_vals, 50,
