@@ -1,10 +1,8 @@
-### Assignment 4: Alon data set exploration ###
 ### Import Data ####
 load('alon.rDa')
 data <- cbind.data.frame(x,y)
 
 ### Feature correlation and p-value visualisations ####
-
 # Corrleation histogram: histogram of feature correlations
 res <- cor(x)
 res[upper.tri(res, diag=TRUE)] <- 0
